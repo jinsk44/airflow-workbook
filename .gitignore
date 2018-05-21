@@ -1,0 +1,13 @@
+*.cfg
+*.db
+*.ipynb
+.idea
+logs
+*.pid
+*.pyc
+*.ipynb
+.env
+*.err
+*.out
+*.log
+utils/__pycache__
