@@ -7,7 +7,7 @@ from utils import airflow_comm_func
 
 
 def print_hello(**kwargs):
-    print("coin_type: " + kwargs["params"]["coin_type"])
+    print("type: " + kwargs["params"]["type"])
     print("execution_date: " + str(kwargs["execution_date"]))
     print("ds "+str(kwargs['ds']))
     print("yesterday_ds "+str(kwargs['yesterday_ds']))
@@ -20,7 +20,7 @@ def print_hello(**kwargs):
 default_args = {
     'owner': 'lalit.bhatt',
     'depends_on_past': False,
-    'start_date': datetime(2016, 4, 15),
+    'start_date': datetime(2018, 5, 18),
     'email': ['lalit.bhatt@gmail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
@@ -32,8 +32,8 @@ default_args = {
 default_args = {
     'description': 'Simple tutorial DAG', 
     'start_date' : datetime(2018, 4, 25),
-    'owner' : 'skjin', 
-    'email' : 'skjin@coinone.com',
+    'owner' : 'jinks44', 
+    'email' : 'jinsk44@gmail.com',
     'on_failure_callback': airflow_comm_func.on_failure_callback,
     'retries' : 1
 }
@@ -43,6 +43,7 @@ dummy_task = DummyOperator(task_id='dummy_task1', retries=0, dag = dag)
 
 hello_operator = PythonOperator(task_id = 'hello_task',
         python_callable=print_hello, 
+        params={'type':'1','type2':'AA123'},
         provide_context=True,
         dag=dag)
 
