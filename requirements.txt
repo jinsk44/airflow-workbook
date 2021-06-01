@@ -45,7 +45,7 @@ SQLAlchemy==1.2.7
 tabulate==0.7.7
 thrift==0.9.3
 Unidecode==1.0.22
-urllib3==1.22
+urllib3==1.26.5
 Werkzeug==0.14.1
 WTForms==2.1
 zope.deprecation==4.3.0
